@@ -44,9 +44,11 @@ function getPrice(symbol) {
     .catch(reject)
   })
 }
-
+console.clear()
+console.log(chalk.yellow('Loading . . . '))
 getPrice().then(ethPrice => {
   getBook(100).then(book => {
+    console.clear()
     let {asks, bids} = book
     let total = 0
     let totalEth = 0
